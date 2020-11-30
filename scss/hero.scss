@@ -1,0 +1,122 @@
+    .hero {
+        background: #b92b27;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, rgba(21, 101, 192, 0.596), rgba(185, 44, 39, 0.459));
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, rgba(21, 101, 192, 0.555), rgba(185, 44, 39, 0.493)), url(../img/hero.jpg);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        .hamburger {
+            position: fixed;
+            width: 5rem;
+            height: 5rem;
+            top: 1rem;
+            right: 2rem;
+            background-color: rgba(0, 0, 0, 0.527);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 1.6rem;
+            border-radius: 50%;
+            cursor: pointer;
+            .line {
+                width: 100%;
+                height: .3rem;
+                background-color: rgb(255, 255, 255);
+            }
+            .line2 {
+                opacity: 1;
+            }
+        }
+        @include desktop {
+            .hamburger {
+                display: none;
+            }
+        }
+    }
+    
+    .main-nav {
+        background-color: rgba(25, 88, 124, 0.336);
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        top: 0;
+        left: -50%;
+        padding: 2rem;
+        text-align: center;
+        transition: left 0.6s ease;
+        .logo {
+            padding-bottom: 2rem;
+            i {
+                font-size: 3rem;
+                color: rgb(15, 15, 15);
+            }
+        }
+        .container-list {
+            display: flex;
+            flex-direction: column;
+            margin-top: 3rem;
+            li {
+                background-color: rgba(0, 0, 0, 0.521);
+                margin-bottom: 2rem;
+                overflow: hidden;
+                position: relative;
+                a {
+                    color: white;
+                    display: inline-block;
+                    padding: .5rem 1rem;
+                }
+                a::before,
+                a::after {
+                    position: absolute;
+                    content: '';
+                    background-color: white;
+                    width: 100%;
+                    left: 0;
+                    height: .5rem;
+                }
+            }
+        }
+    }
+    
+    .interactive-nav {
+        left: 0;
+    }
+    
+    .line2 {
+        opacity: 0;
+    }
+    
+    @include desktop {
+        .main-nav {
+            display: flex;
+            position: static;
+            height: 120px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            width: 100%;
+            align-items: center;
+            .logo {
+                padding-left: 2rem;
+                i {
+                    font-size: 5rem;
+                    color: rgb(15, 15, 15);
+                }
+            }
+            .container-list {
+                flex-direction: row;
+                margin-top: 0;
+                align-items: center;
+                li {
+                    background-color: transparent;
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
