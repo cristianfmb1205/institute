@@ -349,7 +349,7 @@ html {
 }
 
 body {
-  background-color: #848491;
+  background-color: white;
   font-size: 1.6rem;
 }
 
@@ -367,6 +367,7 @@ ul {
   max-width: 1200pc;
   width: 90%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 img {
@@ -386,6 +387,29 @@ img {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
+}
+
+.hero .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero .title {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero .title {
+    font-size: 5rem;
+  }
 }
 
 .hero .hamburger {
@@ -420,8 +444,13 @@ img {
 }
 
 .main-nav {
-  background-color: rgba(25, 88, 124, 0.336);
-  position: absolute;
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: fixed;
   height: 100%;
   width: 50%;
   top: 0;
@@ -437,7 +466,7 @@ img {
 
 .main-nav .logo i {
   font-size: 3rem;
-  color: #0f0f0f;
+  color: #31a8df;
 }
 
 .main-nav .container-list {
@@ -466,7 +495,24 @@ img {
   background-color: white;
   width: 100%;
   left: 0;
-  height: .5rem;
+  height: .2rem;
+  transition: transform 0.6s cubic-bezier(1, 0, 0, 1);
+  transform: scaleX(0);
+}
+
+.main-nav .container-list li a:hover::before,
+.main-nav .container-list li a:hover::after {
+  transform: scaleX(1);
+}
+
+.main-nav .container-list li a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.main-nav .container-list li a:after {
+  bottom: 0;
+  transform-origin: right;
 }
 
 .interactive-nav {
@@ -484,7 +530,7 @@ img {
     height: 120px;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    background: transparent;
     width: 100%;
     align-items: center;
   }
@@ -503,5 +549,55 @@ img {
   .main-nav .container-list li {
     background-color: transparent;
     margin-right: 2rem;
+  }
+}
+
+.ourCourses {
+  min-height: 50rem;
+}
+
+.ourCourses .ourCourses-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ourCourses .container-flex-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.ourCourses .container-flex-cards .card {
+  padding: 1.5rem;
+  box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
+  -webkit-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
+  -moz-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
+  min-height: 40rem;
+}
+
+.ourCourses .container-flex-cards .card h3 {
+  font-size: 2rem;
+  text-align: center;
+  color: #3a599d;
+}
+
+.ourCourses .container-flex-cards .card p {
+  line-height: 1.6;
+}
+
+@media only screen and (min-width: 768px) {
+  .ourCourses .container-flex-cards .card {
+    flex: 0 0 calc(50% - 1rem);
+    margin-bottom: 2rem;
+  }
+  .ourCourses .container-flex-cards .card:nth-child(3) {
+    flex: 1;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .ourCourses .container-flex-cards .card {
+    flex: 0 0 calc(33.3% - 1rem);
   }
 }

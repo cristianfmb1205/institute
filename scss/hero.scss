@@ -11,6 +11,26 @@
         background-size: cover;
         background-position: center;
         position: relative;
+        overflow: hidden;
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+        }
+        @include tablet {
+            .title {
+                font-size: 3rem;
+            }
+        }
+        @include desktop {
+            .title {
+                font-size: 5rem;
+            }
+        }
         .hamburger {
             position: fixed;
             width: 5rem;
@@ -41,8 +61,13 @@
     }
     
     .main-nav {
-        background-color: rgba(25, 88, 124, 0.336);
-        position: absolute;
+        background: #0f0c29;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        position: fixed;
         height: 100%;
         width: 50%;
         top: 0;
@@ -54,7 +79,7 @@
             padding-bottom: 2rem;
             i {
                 font-size: 3rem;
-                color: rgb(15, 15, 15);
+                color: rgb(49, 168, 223);
             }
         }
         .container-list {
@@ -67,7 +92,7 @@
                 overflow: hidden;
                 position: relative;
                 a {
-                    color: white;
+                    color: rgb(255, 255, 255);
                     display: inline-block;
                     padding: .5rem 1rem;
                 }
@@ -78,7 +103,21 @@
                     background-color: white;
                     width: 100%;
                     left: 0;
-                    height: .5rem;
+                    height: .2rem;
+                    transition: transform .6s cubic-bezier(1, 0, 0, 1);
+                    transform: scaleX(0);
+                }
+                a:hover::before,
+                a:hover::after {
+                    transform: scaleX(1);
+                }
+                a::before {
+                    top: 0;
+                    transform-origin: left;
+                }
+                a:after {
+                    bottom: 0;
+                    transform-origin: right;
                 }
             }
         }
@@ -99,7 +138,7 @@
             height: 120px;
             justify-content: space-between;
             align-items: center;
-            background-color: transparent;
+            background: transparent;
             width: 100%;
             align-items: center;
             .logo {

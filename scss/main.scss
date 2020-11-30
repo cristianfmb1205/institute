@@ -1,0 +1,44 @@
+.ourCourses {
+    min-height: 50rem;
+    .ourCourses-title {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .container-flex-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        // align-items: center;
+        height: 100%;
+        .card {
+            padding: 1.5rem;
+            // flex: 0 0 calc(33.3% - 1rem);
+            box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
+            -webkit-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
+            -moz-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
+            min-height: 40rem;
+            h3 {
+                font-size: 2rem;
+                text-align: center;
+                color: rgb(58, 89, 157);
+            }
+            p {
+                line-height: 1.6;
+            }
+        }
+        @include tablet {
+            .card {
+                flex: 0 0 calc(50% - 1rem);
+                margin-bottom: 2rem;
+            }
+            .card:nth-child(3) {
+                flex: 1;
+            }
+        }
+        @include desktop {
+            .card {
+                flex: 0 0 calc(33.3% - 1rem);
+            }
+        }
+    }
+}
