@@ -1,0 +1,36 @@
+.linear-gradient-footer {
+    background: #000000;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    h4 {
+        color: white;
+    }
+    .first-container-links {
+        ul {
+            li {
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+    .second-container-links {
+        ul {
+            li {
+                a {
+                    color: white;
+                    padding: .5 1rem;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .linear-gradient-footer {
+        flex-direction: row;
+    }
+}

@@ -601,3 +601,31 @@ img {
     flex: 0 0 calc(33.3% - 1rem);
   }
 }
+
+.linear-gradient-footer {
+  background: #000000;
+  min-height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.linear-gradient-footer h4 {
+  color: white;
+}
+
+.linear-gradient-footer .first-container-links ul li a {
+  color: white;
+}
+
+.linear-gradient-footer .second-container-links ul li a {
+  color: white;
+  padding: .5 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .linear-gradient-footer {
+    flex-direction: row;
+  }
+}
