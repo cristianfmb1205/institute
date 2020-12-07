@@ -566,6 +566,8 @@ img {
   justify-content: space-between;
   flex-wrap: wrap;
   height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .ourCourses .container-flex-cards .card {
@@ -574,6 +576,7 @@ img {
   -webkit-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
   -moz-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
   min-height: 40rem;
+  opacity: 0;
 }
 
 .ourCourses .container-flex-cards .card h3 {
@@ -584,6 +587,11 @@ img {
 
 .ourCourses .container-flex-cards .card p {
   line-height: 1.6;
+}
+
+.ourCourses .container-flex-cards .card-animation {
+  animation: animation-card 1s;
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -599,6 +607,15 @@ img {
 @media only screen and (min-width: 1024px) {
   .ourCourses .container-flex-cards .card {
     flex: 0 0 calc(33.3% - 1rem);
+  }
+}
+
+@keyframes animation-card {
+  0% {
+    transform: translateY(-50rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 

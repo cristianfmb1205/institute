@@ -10,6 +10,8 @@
         flex-wrap: wrap;
         // align-items: center;
         height: 100%;
+        overflow: hidden;
+        position: relative;
         .card {
             padding: 1.5rem;
             // flex: 0 0 calc(33.3% - 1rem);
@@ -17,6 +19,7 @@
             -webkit-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
             -moz-box-shadow: -8px 6px 13px 0px rgba(202, 98, 204, 0.75) inset;
             min-height: 40rem;
+            opacity: 0;
             h3 {
                 font-size: 2rem;
                 text-align: center;
@@ -25,6 +28,10 @@
             p {
                 line-height: 1.6;
             }
+        }
+        .card-animation {
+            animation: animation-card 1s;
+            opacity: 1;
         }
         @include tablet {
             .card {
@@ -40,5 +47,14 @@
                 flex: 0 0 calc(33.3% - 1rem);
             }
         }
+    }
+}
+
+@keyframes animation-card {
+    0% {
+        transform: translateY(-50rem);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
